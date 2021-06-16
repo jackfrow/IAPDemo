@@ -490,9 +490,11 @@ static NSDictionary *errorDictionary;
         if (!error) {
             NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
             NSInteger status = [jsonResponse[@"status"] integerValue];
+            
+           
 
             if (status != 0) {
-                NSError *error = [NSError errorWithDomain:@"unlimited.free.speedvpn" code:status
+                NSError *error = [NSError errorWithDomain:@"unlimited.speedvpn" code:status
                                                  userInfo:@{NSLocalizedDescriptionKey : errorDictionary[@(status)]?:@"unknown error"}];
                 completionHandler(nil, error);
             } else {
