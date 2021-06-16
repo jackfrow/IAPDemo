@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,10 @@
 		4510F3B4266FB483001511FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4510F3B2266FB483001511FC /* LaunchScreen.storyboard */; };
 		4510F3BF266FB483001511FC /* IAPDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510F3BE266FB483001511FC /* IAPDemoTests.swift */; };
 		4510F3CA266FB483001511FC /* IAPDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510F3C9266FB483001511FC /* IAPDemoUITests.swift */; };
-		4510F3DE266FB50A001511FC /* IAPTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510F3DD266FB50A001511FC /* IAPTool.swift */; };
+		4510F3F72670FFC3001511FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4510F3F62670FFC3001511FC /* StoreKit.framework */; };
+		456D3F12267A401300048E9D /* MKStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 456D3F0F267A401300048E9D /* MKStoreKit.m */; };
+		456D3F13267A401300048E9D /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 456D3F10267A401300048E9D /* MKStoreKitConfigs.plist */; };
+		456D3F1B267A410100048E9D /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D3F1A267A410100048E9D /* IAPManager.swift */; };
 		94FBFA28ADFC434CC1340B6A /* Pods_IAPDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECAF588A2EFB1A5BD970697 /* Pods_IAPDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +53,12 @@
 		4510F3C5266FB483001511FC /* IAPDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IAPDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4510F3C9266FB483001511FC /* IAPDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPDemoUITests.swift; sourceTree = "<group>"; };
 		4510F3CB266FB483001511FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4510F3DD266FB50A001511FC /* IAPTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPTool.swift; sourceTree = "<group>"; };
+		4510F3F62670FFC3001511FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		456D3F0E267A401300048E9D /* IAPDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IAPDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		456D3F0F267A401300048E9D /* MKStoreKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreKit.m; sourceTree = "<group>"; };
+		456D3F10267A401300048E9D /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MKStoreKitConfigs.plist; sourceTree = "<group>"; };
+		456D3F11267A401300048E9D /* MKStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKit.h; sourceTree = "<group>"; };
+		456D3F1A267A410100048E9D /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		4ECAF588A2EFB1A5BD970697 /* Pods_IAPDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAPDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFE97F217EB729BD17A7ED4 /* Pods-IAPDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAPDemo.release.xcconfig"; path = "Target Support Files/Pods-IAPDemo/Pods-IAPDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94FBFA28ADFC434CC1340B6A /* Pods_IAPDemo.framework in Frameworks */,
+				4510F3F72670FFC3001511FC /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +93,7 @@
 		2C9653A4016F3B54718A517C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4510F3F62670FFC3001511FC /* StoreKit.framework */,
 				4ECAF588A2EFB1A5BD970697 /* Pods_IAPDemo.framework */,
 			);
 			name = Frameworks;
@@ -114,13 +124,14 @@
 		4510F3A6266FB482001511FC /* IAPDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4510F3DD266FB50A001511FC /* IAPTool.swift */,
+				456D3F0A267A3FC600048E9D /* IAP */,
 				4510F3A7266FB482001511FC /* AppDelegate.swift */,
 				4510F3AB266FB482001511FC /* ViewController.swift */,
 				4510F3AD266FB482001511FC /* Main.storyboard */,
 				4510F3B0266FB483001511FC /* Assets.xcassets */,
 				4510F3B2266FB483001511FC /* LaunchScreen.storyboard */,
 				4510F3B5266FB483001511FC /* Info.plist */,
+				456D3F0E267A401300048E9D /* IAPDemo-Bridging-Header.h */,
 			);
 			path = IAPDemo;
 			sourceTree = "<group>";
@@ -143,13 +154,23 @@
 			path = IAPDemoUITests;
 			sourceTree = "<group>";
 		};
+		456D3F0A267A3FC600048E9D /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				456D3F11267A401300048E9D /* MKStoreKit.h */,
+				456D3F0F267A401300048E9D /* MKStoreKit.m */,
+				456D3F10267A401300048E9D /* MKStoreKitConfigs.plist */,
+				456D3F1A267A410100048E9D /* IAPManager.swift */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
 		C0D76AC29E915787F2B5D963 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				06A60C9508E3D9174AA3BFBB /* Pods-IAPDemo.debug.xcconfig */,
 				FDFE97F217EB729BD17A7ED4 /* Pods-IAPDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -222,6 +243,7 @@
 				TargetAttributes = {
 					4510F3A3266FB482001511FC = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					4510F3B9266FB483001511FC = {
 						CreatedOnToolsVersion = 12.4;
@@ -261,6 +283,7 @@
 				4510F3B4266FB483001511FC /* LaunchScreen.storyboard in Resources */,
 				4510F3B1266FB483001511FC /* Assets.xcassets in Resources */,
 				4510F3AF266FB482001511FC /* Main.storyboard in Resources */,
+				456D3F13267A401300048E9D /* MKStoreKitConfigs.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,8 +350,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4510F3DE266FB50A001511FC /* IAPTool.swift in Sources */,
+				456D3F1B267A410100048E9D /* IAPManager.swift in Sources */,
 				4510F3AC266FB482001511FC /* ViewController.swift in Sources */,
+				456D3F12267A401300048E9D /* MKStoreKit.m in Sources */,
 				4510F3A8266FB482001511FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,17 +530,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L63DQ52CN9;
+				DEVELOPMENT_TEAM = 9LGC4LDB7U;
 				INFOPLIST_FILE = IAPDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jackfrow.IAPDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unlimitedvpn.free.fast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IAPDemo/IAPDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -526,17 +554,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L63DQ52CN9;
+				DEVELOPMENT_TEAM = 9LGC4LDB7U;
 				INFOPLIST_FILE = IAPDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jackfrow.IAPDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unlimitedvpn.free.fast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IAPDemo/IAPDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

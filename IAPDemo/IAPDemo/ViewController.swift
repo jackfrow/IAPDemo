@@ -12,12 +12,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        IAPTool.shared.loadAllProducts(products: ["com.problenchild.YQIAPTest.product1",
-                                                  "com.problenchild.YQIAPTest.product2",
-                                                  "com.problenchild.YQIAPTest.product3"])
+        
         
     }
-
+    
+    @IBAction func bug(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func restore(_ sender: Any) {
+    }
+    
 
 }
+
+
 
