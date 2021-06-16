@@ -53,6 +53,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func restore(_ sender: Any) {
+        
+        IAPManager.shared.restorePurchase(completionHandler: nil)
+        
     }
     
 
